@@ -11,12 +11,27 @@ body {
     width: fit-content;
     display: grid;
     gap: 1px;
-    grid-template-columns: repeat(16, 1fr);
+    border: solid 3px black;
 }
 
 .dot {
-    
     height: 20px;
     width: 20px;
     background-color: rgb(255, 255, 255);
+}
+
+.content {
+    display: flex;
+    gap: 1em;
+}
+
+.button_colors > button {
+    height: 64px;
+    width: 64px;
+}
+
+.button_colors {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
 }
