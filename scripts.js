@@ -9,20 +9,24 @@ for(let i = 0; i < n; i++){
 
 const dots = document.querySelectorAll(`.dot`);
 
-
 buttons = document.querySelectorAll(`button`);
 let styling_str = `background-color:`;
 let color;
 buttons.forEach(button => {
-    button.addEventListener(`click`, function colorSelection(event){
+    button.addEventListener(`click`, function buttonClick(event){
+        if(event.target.id !== `size_changer`){
         color = event.target.id;
-         console.log(color);
+         console.log(color);}
     });
 });
 
 dots.forEach(dot => {
-    dot.addEventListener('mouseover', function handleClick(event) {
+    dot.addEventListener('mouseover', function handleHover(event) {
       let selected_color = styling_str + color + `;`;
         dot.setAttribute('style', selected_color);
     });
 });
+
+
+
+// do nothing if the id of the button is size_changer

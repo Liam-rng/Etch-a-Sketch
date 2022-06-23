@@ -28,10 +28,27 @@ body {
 .button_colors > button {
     height: 64px;
     width: 64px;
+    border-radius: 6px;
 }
 
 .button_colors {
     display: flex;
     flex-direction: column;
     gap: 4px;
+}
+
+#red {
+    background-color: red;
+}
+#green {
+    background-color: green;
+}
+#blue {
+    background-color: blue;
+}
+#yellow {
+    background-color: yellow;
+}
+#white {
+    background-color: white;
 }
