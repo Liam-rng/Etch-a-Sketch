@@ -2,19 +2,26 @@ const container = document.querySelector(`#container`)
 const choseSize = document.querySelector(`#size_changer`);
 
 const createContainer = function (side, total) {
-    document.getElementById(`container`).style.gridTemplateColumns = `repeat(${side},1fr)`
+    document.getElementById(`container`).style.gridTemplateColumns = `repeat(${side},1fr)`;
     container.innerHTML = ``;
     for (let i = 0; i < total; i++) {
         container.innerHTML += `<div class="dot"></div>`;
     };
 };
+const addColorCapacity = function () {
+    const dots = document.querySelectorAll(`.dot`);
+    dots.forEach(dot => {
+        dot.addEventListener('mouseover', function handleHover() {
+            let selected_color = styling_str + color + `;`;
+            dot.setAttribute('style', selected_color);
+        });
+    });
+}
+const std_side = 8;
+const std_total = std_side * std_side;
 
-
-let side = 8;
-const total = side * side;
-createContainer(side, total);
-
-const dots = document.querySelectorAll(`.dot`);
+createContainer(std_side, std_total);
+addColorCapacity();
 
 buttons = document.querySelectorAll(`button`);
 let styling_str = `background-color:`;
@@ -25,17 +32,10 @@ buttons.forEach(button => {
             user_side = window.prompt(`How many squares should the square have per side?`);
             user_total = user_side * user_side;
             createContainer(user_side, user_total);
+            addColorCapacity();
         }
         else {
             color = event.target.id;
         }
     });
 });
-
-dots.forEach(dot => {
-    dot.addEventListener('mouseover', function handleHover() {
-        let selected_color = styling_str + color + `;`;
-        dot.setAttribute('style', selected_color);
-    });
-});
-
