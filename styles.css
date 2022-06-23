@@ -11,7 +11,6 @@ body {
     display: grid;
     gap: 1px;
     border: solid 3px black;
-
 }
 
 .dot {
@@ -25,10 +24,17 @@ body {
     gap: 1em;
 }
 
-.button_colors>button {
+.button_colors>button,
+#size_changer {
     height: 64px;
     width: 64px;
     border-radius: 6px;
+
+}
+
+button:hover {
+    box-shadow: 3px 2px 4px black;
+    transition: 0.3s;
 }
 
 .button_colors {
