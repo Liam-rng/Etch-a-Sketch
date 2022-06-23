@@ -26,7 +26,3 @@ dots.forEach(dot => {
         dot.setAttribute('style', selected_color);
     });
 });
-
-
-
-// do nothing if the id of the button is size_changer
