@@ -29,7 +29,11 @@ let color;
 buttons.forEach(button => {
     button.addEventListener(`click`, function buttonClick(event) {
         if (event.target.id == `size_changer`) {
+            let user_side;
             user_side = window.prompt(`How many squares should the square have per side?`);
+            while (user_side > 80) {
+                user_side = window.prompt(`Please enter a value smaller than 81 to avoid crashing:`)
+            }
             user_total = user_side * user_side;
             createContainer(user_side, user_total);
             addColorCapacity();
