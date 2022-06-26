@@ -83,3 +83,8 @@ button:hover {
 #white {
     background-color: white;
 }
+
+.palette  {
+    margin: 0;
+    align-self: center;
+}

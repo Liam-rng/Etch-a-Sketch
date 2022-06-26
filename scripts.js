@@ -1,5 +1,9 @@
-const container = document.querySelector(`#container`)
+const container = document.querySelector(`#container`);
 const choseSize = document.querySelector(`#size_changer`);
+const input = document.querySelector("input");
+
+let styling_str = `background-color:`;
+let color;
 
 const createContainer = function (side, total) {
     document.getElementById(`container`).style.gridTemplateColumns = `repeat(${side},1fr)`;
@@ -23,9 +27,12 @@ const std_total = std_side * std_side;
 createContainer(std_side, std_total);
 addColorCapacity();
 
+input.addEventListener("change", function(event){
+  color = event.target.value;
+});
+
 buttons = document.querySelectorAll(`button`);
-let styling_str = `background-color:`;
-let color;
+
 buttons.forEach(button => {
     button.addEventListener(`click`, function buttonClick(event) {
         if (event.target.id == `size_changer`) {
